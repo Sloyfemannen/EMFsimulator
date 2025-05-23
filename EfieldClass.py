@@ -8,9 +8,10 @@ const = 1 / (4 * np.pi * epsilon_0)
 
 class pointch():
 
-    def __init__(self, x: float, y: float, charge: float):
+    def __init__(self, x: float, y: float, charge: 1e-6, velocity = 0.0):
         self.x = x
         self.y = y
+        self.v = velocity
         self.charge = charge
 
     def coulomb(self, x, y):
@@ -105,7 +106,7 @@ class chrgplotter():
         #ax.zaxis.set_major_locator(LinearLocator(10))
         plt.show()
 
-    def twodEplot(self, start, end):
+    def Eplot2D(self, start, end):
 
         xline = np.linspace(start[0], end[0], 1000)
         yline = np.linspace(start[1], end[1], 1000)
@@ -117,7 +118,7 @@ class chrgplotter():
         plt.plot(line, fieldline)
         plt.show()
         
-    def twodVplot(self, start, end):
+    def Vplot2D(self, start, end):
 
         xline = np.linspace(start[0], end[0], 1000)
         yline = np.linspace(start[1], end[1], 1000)
